@@ -13,16 +13,14 @@ public class HelloController {
     @Autowired
     private RaportBuilder raportBuilder;
     
-    @RequestMapping("/hoo")
-    public String index(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        String stop = "here";
+    @RequestMapping("/hooo")
+    public String index(HttpServletResponse response) throws Exception {
 
         response.setContentType("application/pdf");
 
-        //RaportBuilder raportBuilder = new RaportBuilder();
         raportBuilder.buildPdfReport(response.getOutputStream());
 
-        return "Greetings from Spring Boot! ??";
+        return "Raportti hukassa???";
     }
     
 }
