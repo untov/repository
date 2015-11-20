@@ -12,7 +12,7 @@ public class HelloController {
 
     @Autowired
     private RaportBuilder raportBuilder;
-    
+
     @RequestMapping("/hooo")
     public String index(HttpServletResponse response) throws Exception {
 
@@ -22,5 +22,15 @@ public class HelloController {
 
         return "Raportti hukassa???";
     }
-    
+
+    @RequestMapping("/xls")
+    public String index2(HttpServletResponse response) throws Exception {
+
+        response.setContentType("application/vnd.ms-excel");
+
+        raportBuilder.buildExcelReport(response.getOutputStream());
+
+        return "Raportti hukassa???";
+    }
+
 }
